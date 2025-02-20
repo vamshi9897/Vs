@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSuccess - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Include Navbar -->
+    <%- include('templates/Navbar') %>
+
+    <!-- Hero Section -->
+    <div class="relative h-[500px] md:h-[600px] pt-16"> <!-- Added pt-16 to avoid overlap with navbar -->
+        <!-- Flash Message Positioned on the Background Image -->
+        <div class="absolute  mt-12 top-0 left-0 w-full text-white py-2 text-center z-10">
+            <%- include('templates/Flash') %>
+        </div>
+
+        <!-- Background Image -->
+        <img 
+            src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+            alt="Education"
+            class="w-full h-full object-cover"
+        />
+
+        <!-- Content on Image -->
+        <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-center text-white px-6 py-12">
+            <div class="max-w-3xl">
+                <h1 class="text-4xl md:text-4xl font-bold mb-5 leading-tight tracking-wide">Shape Your Future with EduSuccess</h1>
+                <p class="text-lg md:text-xl mb-10    opacity-90">Begin your path to success with us.Unlock your potential and excel.</p>
+                <a href="/student" class="bg-blue-600  text-white px-8 py-3 md:px-10 md:py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition ease-in-out transform hover:scale-105">
+                    Get Started Today
+                </a>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <h2 class="text-3xl font-bold text-center mb-12">Why Choose EduSuccess?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl font-semibold mb-4">Expert Teachers</h3>
+                    <p class="text-gray-600">Learn from highly qualified and experienced educators who are passionate about teaching.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl font-semibold mb-4">Personalized Attention</h3>
+                    <p class="text-gray-600">Small batch sizes ensure individual attention and better learning outcomes.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <h3 class="text-xl font-semibold mb-4">Proven Results</h3>
+                    <p class="text-gray-600">Track record of excellent academic performance and student success stories.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <h2 class="text-3xl font-bold text-center mb-12">What Our Students Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <p class="text-gray-600 mb-4">"EduSuccess helped me achieve my academic goals. The teachers are amazing and truly care about student success."</p>
+                    <p class="font-semibold text-blue-500">- Sarah, CBSE Student</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <p class="text-gray-600 mb-4">"The personalized attention and structured approach helped me excel in my studies. Highly recommended!"</p>
+                    <p class="font-semibold text-blue-500">- Aryan, SSC Student</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include Footer -->
+    <%- include('templates/footer') %>
+
+</body>
+</html>

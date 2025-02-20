@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSuccess Footer</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script> 
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<footer class="bg-gray-900 text-white py-12">
+  <div class="max-w-7xl mx-auto px-6">
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center md:text-left">
+      
+      <!-- Logo & About -->
+      <div class="flex flex-col items-center md:items-start">
+        <div class="flex items-center space-x-3 mb-4">
+          <i data-lucide="book-open" class="h-6 w-6 text-blue-400"></i>
+          <span class="text-xl font-bold">EduSuccess</span>
+        </div>
+        <p class="text-gray-400 text-sm">
+          Begin your path to success with us. Unlock your potential and excel.
+        </p>
+      </div>
+      
+      <!-- Contact Info -->
+      <div class="flex flex-col items-center md:items-start">
+        <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex items-start space-x-2 text-left md:text-left">
+            <i data-lucide="map-pin" class="h-4 w-4 text-blue-400 mt-1"></i>
+            <p class="text-gray-400 leading-relaxed">AR/9, 2/36/2/3, Suraksha Rd, Shubodaya Colony, Hyderabad</p>
+        </div>
+        
+          <div class="flex items-center space-x-2">
+            <i data-lucide="phone" class="h-4 w-4 text-blue-400"></i>
+            <p class="text-gray-400">+91 9985022240</p>
+          </div>
+          <div class="flex items-center space-x-2">
+            <i data-lucide="mail" class="h-4 w-4 text-blue-400"></i>
+            <p class="text-gray-400">vstuitions2017@gmail.com</p>
+          </div>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="flex justify-center md:justify-start space-x-14 mt-7">
+          <a href="https://www.instagram.com/_vs_tuitions_2017/?igsh=MTlncjEwY2ZpODJ5aw%3D%3D#" class="text-gray-400 hover:text-blue-500">
+            <i data-lucide="instagram" class="h-7 w-7"></i>
+          </a>
+          
+          <a href="https://www.facebook.com/people/VS-Tuitions/61572872925481/?rdid=AahQ1YwyhpVARnR2&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1YsVDPkcNT%2F" class="text-gray-400 hover:text-blue-500">
+            <i data-lucide="facebook" class="h-7 w-7"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-red-500">
+            <i data-lucide="youtube" class="h-7 w-7"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-blue-500">
+            <i data-lucide="twitter" class="h-7 w-7"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Location -->
+      <div class="flex flex-col items-center md:items-start">
+        <h3 class="text-lg font-semibold mb-4">Location</h3>
+        <div class="h-40 w-full max-w-xs md:max-w-none rounded-lg overflow-hidden">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3805.088736953896!2d78.3198888751676!3d17.503276983403786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDMwJzExLjgiTiA3OMKwMTknMjAuOSJF!5e0!3m2!1sen!2sin!4v1739891703460!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style="border: 0;"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- Copyright -->
+    <div class="border-t border-gray-800 mt-8 pt-6 text-center">
+      <p class="text-gray-400 text-sm">© 2025 VS Tutions. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Initialize Lucide Icons -->
+<script>
+  window.onload = function () {
+    lucide.createIcons();
+  };
+</script>
+
+</body>
+</html>

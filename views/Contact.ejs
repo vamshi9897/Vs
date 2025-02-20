@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - EduSuccess</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script> <!-- Lucide Icons -->
+
+</head>
+<body class="bg-gray-100">
+    <%- include('templates/Navbar') %><br>
+
+    <!-- Contact Us Section -->
+    <section class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Contact Us</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+                <!-- Contact Form -->
+                <div class="bg-gray-50 shadow-lg rounded-lg p-8">
+                    <h3 class="text-xl font-semibold mb-4">Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-medium">Your Name</label>
+                            <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="John Doe" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-medium">Email Address</label>
+                            <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="example@email.com" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-medium">Message</label>
+                            <textarea rows="4" id="message" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-green-500 text-white py-3 rounded-lg font-medium hover:bg-green-600 transition duration-300">
+                            Send via WhatsApp
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4 bg-gray-50 p-4 rounded-lg shadow">
+                        <i data-lucide="map-pin" class="h-6 w-6 text-blue-500"></i>
+                        <p class="text-gray-700">AR/9, 2/36/2/3, Suraksha Rd, Shubodaya Colony<br/>
+                            ChandaNagar, Hyderabad,Telangana 500050</p>
+                    </div>
+                    <div class="flex items-center space-x-4 bg-gray-50 p-4 rounded-lg shadow">
+                        <i data-lucide="phone" class="h-6 w-6 text-blue-500"></i>
+                        <p class="text-gray-700">+91 9985022240</p>
+                    </div>
+                    <div class="flex items-center space-x-4 bg-gray-50 p-4 rounded-lg shadow">
+                        <i data-lucide="mail" class="h-6 w-6 text-blue-500"></i>
+                        <p class="text-gray-700">vstuitions2017@gmail.com</p>
+                    </div>
+
+                    <!-- Google Map -->
+                    <div class="h-64 w-full rounded-lg overflow-hidden shadow">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3805.088736953896!2d78.3198888751676!3d17.503276983403786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDMwJzExLjgiTiA3OMKwMTknMjAuOSJF!5e0!3m2!1sen!2sin!4v1739891703460!5m2!1sen!2sin"
+                            width="100%"
+                            height="100%"
+                            style="border: 0;"
+                            allowfullscreen
+                            loading="lazy">
+                        </iframe>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons(); // Initialize Lucide Icons
+
+        // WhatsApp Form Submission
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get user input
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+
+            // Format the message for WhatsApp
+            var whatsappMessage = `Hello, my name is ${name}. My email is ${email}. I want to say: ${message}`;
+
+            // Replace with your WhatsApp number (including country code)
+            var phoneNumber = "919985022240"; // Example: +1 (555) 123-4567 => 15551234567
+
+            // Generate WhatsApp link
+            var whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+            // Redirect to WhatsApp
+            window.open(whatsappLink, "_blank");
+        });
+    </script>
+     <%- include('templates/footer') %>
+
+</body>
+</html>

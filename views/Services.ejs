@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Include Navbar -->
+    <%- include('templates/Navbar') %>
+
+    <!-- Hero Section -->
+    <div class="relative h-[500px]">
+        <img 
+            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+            alt="Our Services"
+            class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
+            <div class="text-center text-white">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
+                <p class="text-xl">Comprehensive Educational Programs for Every Student</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <h2 class="text-3xl font-bold text-center mb-12">What We Offer</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Comprehensive Courses -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3665/3665923.png" alt="Courses" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-4">Comprehensive Courses</h3>
+                    <p class="text-gray-600">Structured curriculum covering all subjects with expert guidance.</p>
+                    <ul class="text-gray-600 mt-3">
+                        <li>📘 Science</li>
+                        <li>📗 Mathematics</li>
+                        <li>📙 Social Sciences </li>
+                    </ul>
+                </div>
+
+                <!-- Expert Faculty -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135810.png" alt="Faculty" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-4">Expert Faculty</h3>
+                    <p class="text-gray-600">Experienced teachers providing in-depth subject knowledge and mentorship.</p>
+                    <ul class="text-gray-600 mt-3">
+                        <li>🎤 Subject Experts</li>
+                        <li>👨‍🏫 Mentors</li>
+                        <li>🌟 Guest Lecturers</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Development -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3038/3038821.png" alt="Skills" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-4">Skill Development</h3>
+                    <p class="text-gray-600">Workshops and practical learning to enhance real-world skills.</p>
+                    <ul class="text-gray-600 mt-3">
+                        <li>🗣️ Public Speaking</li>
+                        <li>🧠 Critical Thinking </li>
+                        <li>🌍 Leadership</li>
+                    </ul>
+                </div>
+
+                <!-- E-Learning Support -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2098/2098399.png" alt="E-Learning" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-4">E-Learning Support</h3>
+                    <p class="text-gray-600">Access to digital resources, recorded lectures, and online assessments.</p>
+                    <ul class="text-gray-600 mt-3">
+                        <li>🔍 Concept Clarity </li>
+                        <li>📝 Online Tests</li>
+                        <li>📚 Study Materials</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Methodology -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Teaching Approach</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135816.png" alt="Interactive" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-4">Interactive Learning</h3>
+                    <p class="text-gray-600">Engaging sessions that encourage active participation and discussion.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3126/3126655.png" alt="Assessment" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-4">Regular Assessment</h3>
+                    <p class="text-gray-600">Continuous evaluation to track progress and identify areas for improvement.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Personalized" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-4">Personalized Attention</h3>
+                    <p class="text-gray-600">Individual focus on each student's learning needs and pace.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3500/3500833.png" alt="Digital Resources" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-4">Digital Resources</h3>
+                    <p class="text-gray-600">Access to online study materials and practice questions.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Include Footer -->
+    <%- include('templates/footer') %>
+
+</body>
+</html>

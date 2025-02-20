@@ -1,0 +1,19 @@
+<% if (success1) { %>
+    <div class="bg-green-100 border-2 border-green-500 text-green-800 px-6 py-4 rounded-lg relative mx-auto mt-4 max-w-sm shadow-xl transition-all transform hover:scale-105 duration-300 sm:max-w-xs md:max-w-sm lg:max-w-md" role="alert">
+        <strong class="font-bold text-lg">Success! </strong>
+        <span class="block sm:inline text-md"><%= success1 %></span>
+        <button onclick="this.parentElement.style.display='none';" class="absolute top-0 right-0 px-3 py-2 text-green-800 hover:text-green-600 transition">
+            <span class="text-xl">&times;</span>
+        </button>
+    </div>
+<% } %>
+
+<% if (error1) { %>
+    <div class="bg-red-100 border-2 border-red-500 text-red-800 px-6 py-4 rounded-lg relative mx-auto mt-4 max-w-sm shadow-xl transition-all transform hover:scale-105 duration-300 sm:max-w-xs md:max-w-sm lg:max-w-md" role="alert">
+        <strong class="font-bold text-lg">Error! </strong>
+        <span class="block sm:inline text-md"><%= error1 %></span>
+        <button onclick="this.parentElement.style.display='none';" class="absolute top-0 right-0 px-3 py-2 text-red-800 hover:text-red-600 transition">
+            <span class="text-xl">&times;</span>
+        </button>
+    </div>
+<% } %>

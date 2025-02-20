@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | EduSuccess</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Include Navbar -->
+    <%- include('templates/Navbar') %>
+
+    <!-- Main Content -->
+    <div class="pt-16">
+
+        <!-- Hero Section -->
+        <div class="relative h-[400px]">
+            <img 
+                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+                alt="About Us"
+                class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
+                <div class="text-center text-white">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">About EduSuccess</h1>
+                    <p class="text-xl">Empowering Students Since 2010</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mission Section -->
+        <div class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+                        <p class="text-gray-600 mb-4">
+                            At EduSuccess, we believe every student has the potential to excel. Our mission is to provide high-quality education through personalized attention and innovative teaching methods.
+                        </p>
+                        <p class="text-gray-600">
+                            We focus on building a strong foundation in core subjects while nurturing critical thinking and problem-solving skills that are essential for academic and personal growth.
+                        </p>
+                    </div>
+                    <div>
+                        <img 
+                            src="https://images.unsplash.com/photo-1577880216142-8549e9488dad?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80"
+                            alt="Mission Image"
+                            class="rounded-lg shadow-lg"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-6 md:px-12">
+                <h2 class="text-3xl font-bold text-center mb-12">Our Leadership Team</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Team Member 1 (Male - Leadership) -->
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <img
+                            src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+                            alt="Venkatesh Reddy"
+                            class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                        />
+                        <h3 class="text-xl font-semibold mb-2">Sravani Reddy</h3>
+                        <p class="text-gray-600 mb-2">Academic Leader</p>
+                        <p class="text-gray-500 text-sm">Over 12 years of experience in educational management.</p>
+                    </div>
+        
+                    <!-- Team Member 2 (Female - Academics) -->
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <img
+                            src="https://images.pexels.com/photos/5212324/pexels-photo-5212324.jpeg"
+                            alt="Sravani Reddy"
+                            class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                        />
+                        <h3 class="text-xl font-semibold mb-2">Venkatesh Reddy</h3>
+                        <p class="text-gray-600 mb-2">Senior Tutor</p>
+                        <p class="text-gray-500 text-sm">Over 10 years of experience in private tutoring.</p>
+                    </div>
+        
+                    <!-- Team Member 3 (Female - Operations) -->
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <img
+                            src="https://images.pexels.com/photos/3182743/pexels-photo-3182743.jpeg"
+                            alt="Keerthana Devi"
+                            class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
+                        />
+                        <h3 class="text-xl font-semibold mb-2">Keerthana Devi</h3>
+                        <p class="text-gray-600 mb-2">Operations Coordinator</p>
+                        <p class="text-gray-500 text-sm">10+ years in academic operations</p>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Include Footer -->
+    <%- include('templates/footer') %>
+
+</body>
+</html>

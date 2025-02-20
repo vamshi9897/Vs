@@ -1,0 +1,328 @@
+/* ========================================= */
+/* 🚀 Tailwind CSS Integration               */
+/* ========================================= */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================= */
+/* 🎯 COMMON STYLES (Applies to All Pages)   */
+/* ========================================= */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9fafb;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sections Styling */
+.section {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+/* ========================================= */
+/* 🏠 HOME PAGE STYLES                       */
+/* ========================================= */
+.hero {
+    position: relative;
+    height: 500px;
+    background: url('https://source.unsplash.com/1600x900/?education,students') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+/* Responsive Hero Section */
+@media (max-width: 768px) {
+    .hero {
+        height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
+
+/* ========================================= */
+/* ℹ️ ABOUT PAGE STYLES                      */
+/* ========================================= */
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    text-align: left;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive About Section */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ========================================= */
+/* 📖 BLOG PAGE STYLES                       */
+/* ========================================= */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.hero {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif; /* Prevents overflow */
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area properly */
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.category{
+    text-decoration: underline;
+    color: #1d4ed8;
+    margin-top: 15px;
+}
+.container{
+    margin-bottom: 15px;
+}
+
+/* Responsive Blog Section */
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================= */
+/* 🎓 STUDENT & TUTOR ENROLLMENT STYLES      */
+/* ========================================= */
+.enrollment-form {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Inputs */
+.enrollment-form input,
+.enrollment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Form Submit Button */
+.enrollment-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.enrollment-form button:hover {
+    background-color: #1d4ed8;
+}
+
+/* ========================================= */
+/* 📞 CONTACT PAGE STYLES                    */
+/* ========================================= */
+.contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    text-align: left;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h3 {
+    color: #2563eb;
+}
+
+.contact-form {
+    flex: 1;
+    max-width: 500px;
+}
+
+/* Responsive Contact Page */
+@media (max-width: 768px) {
+    .contact-section {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ========================================= */
+/* 🏁 FOOTER SECTION                         */
+/* ========================================= */
+.footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+/* Footer Links */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: white;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #2563eb;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer {
+        padding: 1.5rem 1rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* ========================================= */
+/* 💼 SERVICES SECTION                       */
+/* ========================================= */
+.services {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    font-size: 2rem;
+}
+
+.subcategories {
+    list-style: none;
+    padding: 0;
+}
+
+.subcategories li {
+    margin: 5px 0;
+}
+

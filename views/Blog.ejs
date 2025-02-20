@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSuccess Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Include Navbar -->
+    <%- include('templates/Navbar') %>
+
+    <!-- Hero Section -->
+    <header class="relative h-[400px]">
+        <img 
+            src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" 
+            alt="Blog"
+            class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-center text-white">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">EduSuccess Blog</h1>
+                <p class="text-xl">Insights, Tips, and Updates from Education Experts</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Posts Grid -->
+    <main class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <h2 class="text-3xl font-bold text-center mb-12">Latest Articles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <% blogPosts.forEach(post => { %>
+                    <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img 
+                            src="<%= post.image %>" 
+                            alt="<%= post.title %>" 
+                            class="w-full h-56 object-cover"
+                        />
+                        <div class="p-6 text-center">
+                            <span class="text-blue-500 text-sm font-semibold uppercase mb-2 block"><%= post.category %></span>
+                            <h3 class="text-xl font-bold mb-3"><%= post.title %></h3>
+                            <p class="text-gray-600 text-sm mb-4"><%= post.excerpt %></p>
+                            <div class="text-gray-500 text-sm">
+                                <p><strong>By:</strong> <%= post.author %></p>
+                                <p><strong>Date:</strong> <%= post.date %></p>
+                            </div>
+                        </div>
+                    </article>
+                <% }); %>
+            </div>
+        </div>
+    </main>
+
+    <!-- Include Footer -->
+    <%- include('templates/footer') %>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Enrollment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <%- include('templates/Navbar') %>
+    <div class="pt-16">
+        <!-- Hero Section -->
+        <div class="relative h-[300px]">
+            <img 
+                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+                alt="Student Enrollment"
+                class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
+                <div class="text-center text-white">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Start Your Learning Journey</h1>
+                    <p class="text-xl">Join EduSuccess and excel in your academics</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enrollment Form -->
+        <div class="py-16">
+            <div class="max-w-3xl mx-auto px-4">
+                <form action="/student" method="POST" class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">Student's First Name</label>
+                            <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                        </div>
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Student's Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="grade" class="block text-sm font-medium text-gray-700 mb-2">Current Grade/Class</label>
+                        <input type="text" id="grade" name="grade" required class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                    </div>
+                    <div class="mb-6">
+                        <label for="guardian" class="block text-sm font-medium text-gray-700 mb-2">Guardian</label>
+                        <input type="text" id="guardian" name="guardian" required class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="board" class="block text-sm font-medium text-gray-700 mb-2">Board of Education</label>
+                        <select id="board" name="board" required class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                            <option value="">Select board</option>
+                            <option value="ssc">SSC</option>
+                            <option value="cbse">CBSE</option>
+                            <option value="intermediate">Intermediate</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="subjects" class="block text-sm font-medium text-gray-700 mb-2">Subjects Interested In</label>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            <label><input type="checkbox" name="subjects" value="mathematics"> Mathematics</label>
+                            <label><input type="checkbox" name="subjects" value="physics"> Physics</label>
+                            <label><input type="checkbox" name="subjects" value="chemistry"> Chemistry</label>
+                            <label><input type="checkbox" name="subjects" value="biology"> Biology</label>
+                            <label><input type="checkbox" name="subjects" value="english"> English</label>
+                            <label><input type="checkbox" name="subjects" value="social"> Social Studies</label>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Any specific requirements or questions?</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+                        Submit Enrollment
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include('templates/footer') %>
+</body>
+</html>
