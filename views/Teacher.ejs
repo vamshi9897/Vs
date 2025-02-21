@@ -49,12 +49,24 @@
         </div>
 
         <div class="mb-6">
-          <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-          <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg" />
-        </div>
+          <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+              Phone Number
+          </label>
+          <input type="tel" id="phone" name="phone" required
+              class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+              pattern="^\d{10}|\d{12}$"
+              title="Enter exactly 10 or 12 digits only"
+              oninput="validatePhone()" />
+          <p id="phoneError" class="text-red-500 text-sm mt-1 hidden">Phone number must be exactly 10 or 12 digits(That includes Country Code) .</p>
+      </div>
+      
         <div class="mb-6">
           <label for="alternatephone" class="block text-sm font-medium text-gray-700 mb-2">Alternate Phone Number</label>
-          <input type="tel" id="alternatephone" name="alternatephone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+          <input type="tel" id="alternatephone" name="alternatephone" required  class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+          pattern="^\d{10}|\d{12}$"
+          title="Enter exactly 10 or 12 digits only"
+          oninput="validatePhone()" />
+      <p id="phoneError" class="text-red-500 text-sm mt-1 hidden">Phone number must be exactly 10 or 12 digits(That includes Country Code) .</p>>
       </div>
         <div class="mb-6">
           <label for="area" class="block text-sm font-medium text-gray-700 mb-2">Area</label>
@@ -65,14 +77,51 @@
           <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject Expertise</label>
           <select id="subject" name="subject" required class="w-full px-4 py-2 border border-gray-300 rounded-lg">
             <option value="">Select a subject</option>
+            <option value="english">English</option>
+            <option value="telugu">Telugu</option>
+            <option value="hindi">Hindi</option>
             <option value="mathematics">Mathematics</option>
             <option value="physics">Physics</option>
             <option value="chemistry">Chemistry</option>
             <option value="biology">Biology</option>
-            <option value="english">English</option>
+            <option value="french">French</option>
             <option value="social">Social Studies</option>
           </select>
         </div>
+        
+        <div class="mb-6">
+          <label class="block text-sm font-medium text-gray-700 mb-2">
+              Select the Standards You Can Teach
+          </label>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+              
+              <!-- Button Checkbox for Grades 1-5 -->
+              <label class="cursor-pointer">
+                  <input type="checkbox" name="standard" value="1-5" class="hidden peer">
+                  <div class="px-6 py-3 border-2 border-gray-400 rounded-lg text-gray-700 text-center font-medium peer-checked:bg-blue-500 peer-checked:border-blue-500 peer-checked:text-white transition-all duration-300">
+                      Grades 1-5
+                  </div>
+              </label>
+      
+              <!-- Button Checkbox for Grades 6-10 -->
+              <label class="cursor-pointer">
+                  <input type="checkbox" name="standard"  value="6-10" class="hidden peer">
+                  <div class="px-6 py-3 border-2 border-gray-400 rounded-lg text-gray-700 text-center font-medium peer-checked:bg-blue-500 peer-checked:border-blue-500 peer-checked:text-white transition-all duration-300">
+                      Grades 6-10
+                  </div>
+              </label>
+      
+              <!-- Button Checkbox for Intermediate -->
+              <label class="cursor-pointer">
+                  <input type="checkbox"name="standard"  value="Intermediate" class="hidden peer">
+                  <div class="px-6 py-3 border-2 border-gray-400 rounded-lg text-gray-700 text-center font-medium peer-checked:bg-blue-500 peer-checked:border-blue-500 peer-checked:text-white transition-all duration-300">
+                      Intermediate
+                  </div>
+              </label>
+      
+          </div>
+      </div>
+      
 
         <div class="mb-6">
           <label for="experience" class="block text-sm font-medium text-gray-700 mb-2">Years of Teaching Experience</label>
@@ -96,6 +145,22 @@
     </div>
   </div>
 </div>
+
+<script>
+  function validatePhone() {
+      let phoneInput = document.getElementById("phone");
+      let errorText = document.getElementById("phoneError");
+      let phoneValue = phoneInput.value;
+      
+      if (phoneValue.length === 10 || phoneValue.length === 12) {
+          errorText.classList.add("hidden");
+          phoneInput.setCustomValidity("");
+      } else {
+          errorText.classList.remove("hidden");
+          phoneInput.setCustomValidity("Phone number must be exactly 10 or 12 digits.");
+      }
+  }
+  </script>
 <%- include('templates/whatsappicon') %>
 
 <%- include('templates/footer') %>

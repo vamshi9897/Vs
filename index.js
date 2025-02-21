@@ -87,9 +87,16 @@ app.get('/teacher', (req, res, next) => {
 
 app.post('/teacher', upload.none(), async (req, res) => {
     try {
-        console.log("Session Data Before Flash:", req.session); 
-        const { firstName, lastName, email, phone, experience = "Not Provided", subject, message ,area,alternatephone} = req.body;
-    
+        // console.log("Session Data Before Flash:", req.session);
+
+        // Extracting request body data
+        const { firstName, lastName, email, phone, experience = "Not Provided", standard, message, area, alternatephone, subject } = req.body;
+        
+        // Ensure `standard` is always an array
+        const standardList = Array.isArray(standard) ? standard : standard ? [standard] : [];
+        const standardText = standardList.join(", ");
+
+        // Mail options
         let mailOptions = {
             from: email,
             to: 'vstuitions2017@gmail.com',
@@ -101,27 +108,31 @@ app.post('/teacher', upload.none(), async (req, res) => {
                     <tr><td><strong>Name</strong></td><td>${firstName} ${lastName}</td></tr>
                     <tr><td><strong>Email</strong></td><td>${email}</td></tr>
                     <tr><td><strong>Phone</strong></td><td>${phone}</td></tr>
-                    <tr><td><strong>Phone</strong></td><td>${alternatephone}</td></tr>
-                    <tr><td><strong>Phone</strong></td><td>${area}</td></tr>
+                    <tr><td><strong>Alternate Phone</strong></td><td>${alternatephone || "Not Provided"}</td></tr>
+                    <tr><td><strong>Area</strong></td><td>${area || "Not Provided"}</td></tr>
                     <tr><td><strong>Experience</strong></td><td>${experience}</td></tr>
                     <tr><td><strong>Subject</strong></td><td>${subject}</td></tr>
-                    <tr><td><strong>Message</strong></td><td>${message}</td></tr>
+                    <tr><td><strong>Standards they Teach</strong></td><td>${standardText || "Not Provided"}</td></tr>
+                    <tr><td><strong>Message</strong></td><td>${message || "No message provided"}</td></tr>
                 </table>
             `
         };
 
+        // Send email
         await transporter.sendMail(mailOptions);
-         req.flash("success", "Email sent successfully!");
-        req.session.save(() => {
-            // console.log("Session Data After Flash:", req.session); // Debugging after flash
-            res.redirect("/");
-        });
+        
+        // Flash success message & save session before redirect
+        req.flash("success", "Email sent successfully!");
+        req.session.save(() => res.redirect("/"));
+        
     } catch (error) {
-        console.error(error);
+        console.error("Error sending email:", error);
+        
         req.flash("error", "Error sending email.");
         req.session.save(() => res.redirect('/'));
     }
 });
+
 
 app.get('/student', (req, res, next) => {
     try {
@@ -148,8 +159,8 @@ app.post('/student', upload.none(), async (req, res) => {
                     <tr><td><strong>Name</strong></td><td>${firstName} ${lastName}</td></tr>
                     <tr><td><strong>Email</strong></td><td>${email}</td></tr>
                     <tr><td><strong>Phone</strong></td><td>${phone}</td></tr>
-                    <tr><td><strong>Phone</strong></td><td>${alternatephone}</td></tr>
-                    <tr><td><strong>Guardian</strong></td><td>${area}</td></tr>
+                    <tr><td><strong>Alternate Phone Number</strong></td><td>${alternatephone}</td></tr>
+                    <tr><td><strong>Area</strong></td><td>${area}</td></tr>
                     <tr><td><strong>Grade</strong></td><td>${grade}</td></tr>
                     <tr><td><strong>Board</strong></td><td>${board}</td></tr>
                     <tr><td><strong>Subjects</strong></td><td>${subjectsText || "Not Provided"}</td></tr>
