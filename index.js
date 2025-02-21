@@ -16,7 +16,9 @@ app.set('views', path.join(__dirname, '/views'));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
+
+
 app.use(cookie('secret'));
 
 const upload = multer();
@@ -86,8 +88,8 @@ app.get('/teacher', (req, res, next) => {
 app.post('/teacher', upload.none(), async (req, res) => {
     try {
         console.log("Session Data Before Flash:", req.session); 
-        const { firstName, lastName, email, phone, experience = "Not Provided", subject, message } = req.body;
-
+        const { firstName, lastName, email, phone, experience = "Not Provided", subject, message ,area,alternatephone} = req.body;
+    
         let mailOptions = {
             from: email,
             to: 'vstuitions2017@gmail.com',
@@ -99,6 +101,8 @@ app.post('/teacher', upload.none(), async (req, res) => {
                     <tr><td><strong>Name</strong></td><td>${firstName} ${lastName}</td></tr>
                     <tr><td><strong>Email</strong></td><td>${email}</td></tr>
                     <tr><td><strong>Phone</strong></td><td>${phone}</td></tr>
+                    <tr><td><strong>Phone</strong></td><td>${alternatephone}</td></tr>
+                    <tr><td><strong>Phone</strong></td><td>${area}</td></tr>
                     <tr><td><strong>Experience</strong></td><td>${experience}</td></tr>
                     <tr><td><strong>Subject</strong></td><td>${subject}</td></tr>
                     <tr><td><strong>Message</strong></td><td>${message}</td></tr>
@@ -109,7 +113,7 @@ app.post('/teacher', upload.none(), async (req, res) => {
         await transporter.sendMail(mailOptions);
          req.flash("success", "Email sent successfully!");
         req.session.save(() => {
-            console.log("Session Data After Flash:", req.session); // Debugging after flash
+            // console.log("Session Data After Flash:", req.session); // Debugging after flash
             res.redirect("/");
         });
     } catch (error) {
@@ -129,7 +133,7 @@ app.get('/student', (req, res, next) => {
 
 app.post('/student', upload.none(), async (req, res) => {
     try {
-        const { firstName, lastName, email, phone, subjects, message, guardian, board, grade } = req.body;
+        const { firstName, lastName, email, phone, subjects, message, area, board, grade,alternatephone } = req.body;
         const subjectsList = Array.isArray(subjects) ? subjects : subjects ? [subjects] : [];
         const subjectsText = subjectsList.join(", ");
 
@@ -144,7 +148,8 @@ app.post('/student', upload.none(), async (req, res) => {
                     <tr><td><strong>Name</strong></td><td>${firstName} ${lastName}</td></tr>
                     <tr><td><strong>Email</strong></td><td>${email}</td></tr>
                     <tr><td><strong>Phone</strong></td><td>${phone}</td></tr>
-                    <tr><td><strong>Guardian</strong></td><td>${guardian}</td></tr>
+                    <tr><td><strong>Phone</strong></td><td>${alternatephone}</td></tr>
+                    <tr><td><strong>Guardian</strong></td><td>${area}</td></tr>
                     <tr><td><strong>Grade</strong></td><td>${grade}</td></tr>
                     <tr><td><strong>Board</strong></td><td>${board}</td></tr>
                     <tr><td><strong>Subjects</strong></td><td>${subjectsText || "Not Provided"}</td></tr>

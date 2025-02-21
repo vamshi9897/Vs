@@ -1,0 +1,38 @@
+<!-- Floating WhatsApp Button Container -->
+<div id="whatsapp-container" class="fixed bottom-5 right-5 group">
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919985022240?text=Hello!%20I%20need%20some%20help." 
+       target="_blank" 
+       class="block bg-green-500 bg-opacity-40 p-3 rounded-full shadow-lg hover:bg-opacity-70 transition duration-300 relative backdrop-blur-md">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+             alt="WhatsApp" 
+             class="h-8 w-8 opacity-80 hover:opacity-100 transition duration-300">
+    </a>
+
+    <!-- Close Button (Now correctly visible on hover) -->
+    <button id="close-whatsapp" 
+            class="absolute h-5 w-5 -top-3 -right-3 bg-red-600 text-white text-xs font-bold rounded-full opacity-0 transition duration-1000">
+        ✖
+    </button>
+</div>
+
+<!-- JavaScript for Close Button & Hover Effect -->
+<script>
+    const closeBtn = document.getElementById("close-whatsapp");
+    const whatsappContainer = document.getElementById("whatsapp-container");
+
+    // Show close button on hover
+    whatsappContainer.addEventListener("mouseenter", () => {
+        closeBtn.style.opacity = "1";
+        setTimeout(() => {
+            closeBtn.style.opacity = "0"; // Hide after 1 sec
+        }, 1000);
+    });
+
+    // Hide WhatsApp icon on click
+    closeBtn.addEventListener("click", function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        whatsappContainer.style.display = "none";
+    });
+</script>
