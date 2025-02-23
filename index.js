@@ -99,8 +99,8 @@ app.post('/teacher', upload.none(), async (req, res) => {
         // Mail options
         let mailOptions = {
             from: email,
-            // to: 'vstuitions2017@gmail.com',
-            to: 'vamshibathula1163@gmail.com',
+            to: 'vstuitions2017@gmail.com',
+           
             subject: `New Tutor Form Submission - ${subject}`,
             html: `
                 <h2>New Tutor Form Submission</h2>
@@ -154,8 +154,7 @@ app.post('/student', upload.none(), async (req, res) => {
 
         let mailOptions = {
             from: email,
-            // to: 'vstuitions2017@gmail.com',
-            to: 'vamshibathula1163@gmail.com',
+            to: 'vstuitions2017@gmail.com',
             subject: `New Student Form Submission`,
             html: `
                 <h2>New Student Form Submission</h2>
