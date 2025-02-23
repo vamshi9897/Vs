@@ -99,7 +99,8 @@ app.post('/teacher', upload.none(), async (req, res) => {
         // Mail options
         let mailOptions = {
             from: email,
-            to: 'vstuitions2017@gmail.com',
+            // to: 'vstuitions2017@gmail.com',
+            to: 'vamshibathula1163@gmail.com',
             subject: `New Tutor Form Submission - ${subject}`,
             html: `
                 <h2>New Tutor Form Submission</h2>
@@ -144,13 +145,17 @@ app.get('/student', (req, res, next) => {
 
 app.post('/student', upload.none(), async (req, res) => {
     try {
-        const { firstName, lastName, email, phone, subjects, message, area, board, grade,alternatephone } = req.body;
+        const { firstName, lastName, email, phone, subjects, message, area, board, grade,alternatephone,courses} = req.body;
         const subjectsList = Array.isArray(subjects) ? subjects : subjects ? [subjects] : [];
         const subjectsText = subjectsList.join(", ");
 
+        const coursesList = Array.isArray(courses) ? courses : courses ? [courses] : [];
+        const coursesText = coursesList.join(", ");
+
         let mailOptions = {
             from: email,
-            to: 'vstuitions2017@gmail.com',
+            // to: 'vstuitions2017@gmail.com',
+            to: 'vamshibathula1163@gmail.com',
             subject: `New Student Form Submission`,
             html: `
                 <h2>New Student Form Submission</h2>
@@ -163,7 +168,9 @@ app.post('/student', upload.none(), async (req, res) => {
                     <tr><td><strong>Area</strong></td><td>${area}</td></tr>
                     <tr><td><strong>Grade</strong></td><td>${grade}</td></tr>
                     <tr><td><strong>Board</strong></td><td>${board}</td></tr>
+                    <tr><td><strong>Courses</strong></td><td>${coursesText || "Not Provided"}</td></tr>
                     <tr><td><strong>Subjects</strong></td><td>${subjectsText || "Not Provided"}</td></tr>
+
                     <tr><td><strong>Message</strong></td><td>${message}</td></tr>
                 </table>
             `
