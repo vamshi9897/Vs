@@ -146,7 +146,7 @@ app.get('/student', (req, res, next) => {
 
 app.post('/student', upload.none(), async (req, res) => {
     try {
-        const { firstName, lastName, email, phone, subjects, message, area, board, grade,alternatephone,courses} = req.body;
+        const { firstName, lastName, email, phone, subjects, message, area, board, grade,alternatephone,courses,mode} = req.body;
         const subjectsList = Array.isArray(subjects) ? subjects : subjects ? [subjects] : [];
         const subjectsText = subjectsList.join(", ");
 
@@ -168,6 +168,8 @@ app.post('/student', upload.none(), async (req, res) => {
                     <tr><td><strong>Area</strong></td><td>${area}</td></tr>
                     <tr><td><strong>Grade</strong></td><td>${grade}</td></tr>
                     <tr><td><strong>Board</strong></td><td>${board}</td></tr>
+                    <tr><td><strong>Mode Of Tuition</strong></td><td>${mode}</td></tr>
+
                     <tr><td><strong>Courses</strong></td><td>${coursesText || "Not Provided"}</td></tr>
                     <tr><td><strong>Subjects</strong></td><td>${subjectsText || "Not Provided"}</td></tr>
 
