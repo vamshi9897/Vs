@@ -2,15 +2,18 @@
 <div id="floating-buttons" class="fixed bottom-5 right-5 flex flex-col items-center space-y-3 group z-50 mt-3">
     
     <!-- WhatsApp Button -->
-    <button id="whatsapp-button" class="relative flex items-center justify-center bg-green-500 text-white text-sm font-semibold rounded-full shadow-lg transition-all duration-300 lg:w-40 lg:h-12 w-12 h-12">
+    <a id="whatsapp-button" 
+       href="https://wa.me/919985022240?text=Hello%20I%20need%20some%20help." 
+       target="_blank"
+       class="relative flex items-center justify-center bg-green-500 text-white text-sm font-semibold rounded-full shadow-lg transition-all duration-300 lg:w-40 lg:h-12 w-12 h-12">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
              alt="WhatsApp" 
              class="h-6 w-6">
-        <span class="ml-2 hidden lg:inline">Any Queries?</span> <!-- Text only visible on large screens -->
-    </button>
+        <span class="ml-2 hidden lg:inline">Any Queries?</span>
+    </a>
 
     <!-- Home Tuition Button -->
-    <a href="/student" id="tuition-button" class="relative flex items-center justify-center bg-blue-500 text-white text-sm font-semibold rounded-full shadow-lg transition-all duration-300 lg:w-40 lg:h-12 w-12 h-12">
+    <a href="/student" id="tuition-button" class="relative flex items-center justify-center bg-blue-500 text-white text-sm font-semibold rounded-full shadow-lg transition-all duration-300 lg:w-40 lg:w-12 h-12 ">
         <img src="https://cdn-icons-png.flaticon.com/512/2991/2991126.png" 
              alt="Home Tuition" 
              class="h-6 w-6">
@@ -31,3 +34,16 @@
         }
     }
 </style>
+
+<!-- <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("whatsapp-button").addEventListener("click", function(event) {
+            let phoneNumber = "919985022240"; // Your WhatsApp number
+            let message = "Hello! I need some help."; // Default message
+            let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+            window.open(url, "_blank"); // Opens in a new tab
+        });
+    });
+    </script> -->
+    
