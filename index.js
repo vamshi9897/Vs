@@ -40,11 +40,6 @@ app.use(flash());
 //     next();
 // });
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-    console.error("Error:", err.message);
-    res.status(500).render("error", { errorMessage: err.message });
-});
 
 // Routes
 app.get('/', (req, res, next) => {
@@ -85,7 +80,7 @@ app.get('/teacher', (req, res, next) => {
     }
 });
 
-app.post('/teacher', upload.none(), async (req, res) => {
+app.post('/teacher', upload.none(), async (req, res,next) => {
     try {
         // console.log("Session Data Before Flash:", req.session);
 
@@ -144,7 +139,7 @@ app.get('/student', (req, res, next) => {
     }
 });
 
-app.post('/student', upload.none(), async (req, res) => {
+app.post('/student', upload.none(), async (req, res,next) => {
     try {
         const { firstName, lastName, email, phone, subjects, message, area, board, grade,alternatephone,courses,mode} = req.body;
         const subjectsList = Array.isArray(subjects) ? subjects : subjects ? [subjects] : [];
@@ -203,6 +198,18 @@ app.get('/contact', (req, res, next) => {
         next(err);
     }
 });
+
+// Error handling middleware
+app.use((req, res, next) => {
+    res.status(404).render("error", {errorMessage:"page not found"});
+   
+  });
+  
+app.use((err, req, res, next) => {
+    console.error("Error:", err.message);
+    res.status(500).render("error", { errorMessage: err.message });
+});
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
